@@ -16,10 +16,8 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-
-        
     </head>
-    <body class="d-flex flex-column h-100">
+    <body id="main-body" class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
@@ -60,8 +58,6 @@
                                 <div class="profile bg-gradient-primary-to-secondary">
                                     <!-- TIP: For best results, use a photo with a transparent background like the demo example below-->
                                     <!-- Watch a tutorial on how to do this on YouTube (link)-->
-
-
 
                                     <div class="dots-1">
                                         <!-- SVG Dots-->
@@ -185,8 +181,21 @@
             <section class="bg-light py-5">
                 <div class="container px-5">
                     <div class="row gx-5 justify-content-center">
-                        <div class="col-xxl-4">
-                            <img alt="cv" class="cv-tiny" src="assets/CV_v6.png"/>
+                        <div class="col-xxl-4 text-center">
+                            <img alt="cv" 
+                                id="cv_image" 
+                                class="cv-tiny cv-transition" 
+                                src="assets/CV_v6.png"/>
+                            <div id="overlay"></div>
+                            <div id="popup" class="gap-4 justify-content-center">
+                                <img alt="cv" 
+                                class="cv-taller" 
+                                src="assets/CV_v6.png"/>
+                                <a class="btn btn-outline-secondary btn-lg px-4 py-3 fs-6 fw-bolder" href="assets\CV_Mehedi-Touré_v6.pdf" 
+                                download="cv_mehedi_toure.pdf"
+                                target="_blank"><i class="bi bi-download "></i></a>
+
+                            </div>
                         </div>
                         <div class="col-xxl-8">
                             <div class="text-center my-5">
@@ -215,9 +224,7 @@
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                     <div class="col-auto"><div class="small m-0">Copyright &copy; Mehédi toure 2024</div></div>
                     <div class="col-auto">
-                        <a class="small" href="#!">Privacy</a>
-                        <span class="mx-1">&middot;</span>
-                        <a class="small" href="mailto:mehedi.toure@gmail.com" place>mail</a>
+                        <a class="small" href="mailto:mehedi.toure@gmail.com" place>Mail</a>
                         <span class="mx-1">&middot;</span>
                         <a class="small" href="#!">Contact</a>
                     </div>
@@ -227,6 +234,38 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
     </body>
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            console.log("DOM fully loaded and parsed");
+            
+            var cv_image = document.getElementById('cv_image');
+            cv_image.addEventListener("click", (event) => {
+                console.log('show');
+                showPopUp();
+            });
+            function showPopUp() {
+                var overlay = document.getElementById('overlay');
+                overlay.style.display = 'block';
+                var popup = document.getElementById('popup');
+                popup.style.display = 'flex';
+                //hide scroll bar
+                //document.getElementById('main-body').style.overflow = 'hidden';
+            }
+            
+            var overlay = document.getElementById('overlay');
+            overlay.addEventListener("click", (event) => {
+                console.log('hide');
+                hidePopUp();
+            });
+            function hidePopUp() {
+                var overlay = document.getElementById('overlay');
+                overlay.style.display = 'none';
+                var popup = document.getElementById('popup');
+                popup.style.display = 'none';
+                //show scroll bar
+                //document.getElementById('main-body').style.overflow = 'auto'; 
+            }
+        });
+    </script>
 </html>

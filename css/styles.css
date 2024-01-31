@@ -11653,14 +11653,39 @@ html {
 .profile .dots-4 svg {
   fill: #1e30f3;
 }
+
+#cv_iframe{
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border: none; /* Remove iframe border */
+  display: none; /* Hide initially */
+}
+
 .cv-tiny{
-  border-radius: 1vw;
+  border-radius: 1.5vw;
   width: 42.4vw; /* Set the width proportionally for A4 aspect ratio */
   height: 60vw; /* 40% of the viewport height */
 }
+.cv-taller{
+  width: 22rem;
+}
+.cv-transition{
+  transition: transform .2s;
+  border-radius: 0.3vw;
+  cursor: zoom-in;
+}
+.cv-transition:hover{
+  transform:scale(1.15);
+}
 @media (min-width: 576px) {
+  .cv-taller{
+    width: 26rem;
+  }
   .cv-tiny{
-    border-radius: 1vw;
     width: 42.4vw; /* Set the width proportionally for A4 aspect ratio */
     height: 60vw; /* 40% of the viewport height */
   }
@@ -11689,8 +11714,10 @@ html {
   }
 }
 @media (min-width: 768px) {
+  .cv-taller{
+    width: 26rem;
+  }
   .cv-tiny{
-    border-radius: 0.3vw;
     width: 35.6vw; /* 70% of the viewport width */
     height: 50vw; /* Set the height proportionally to maintain A4 aspect ratio */
   }
@@ -11719,8 +11746,11 @@ html {
   }
 }
 @media (min-width: 992px) {
+  .cv-taller{
+    width: 26rem;
+  }
+
   .cv-tiny{
-    border-radius: 1vw;
     width: 28.4vw; /* Set the width proportionally for A4 aspect ratio */
     height: 40vw; /* 40% of the viewport height */
   }
@@ -11749,8 +11779,12 @@ html {
   }
 }
 @media (min-width: 1200px) {
+  
+.cv-taller{
+  width: 33rem;
+}
+
   .cv-tiny{
-    border-radius: 0.3vw;
     width: 15vw; /* 70% of the viewport width */
     height: 21.2vw; /* Set the height proportionally to maintain A4 aspect ratio */
   }
@@ -11777,4 +11811,26 @@ html {
     width: 1.5vw;
     left: -2vw;
   }
+}
+
+#overlay {
+  display: none;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+}
+
+#popup {
+  display: none;
+  z-index: 2;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1%;
+  align-items: center;
 }
