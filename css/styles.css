@@ -11589,13 +11589,33 @@ html {
 }
 .profile .profile-img {
   height: 80vw;
-  max-height: 45rem;
+  max-height: 30rem;
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
 }
 
+.profile-div .profile-img-1 {
+  height: 70%;
+  max-height: 80%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.profile-div .profile-img-2 {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+}
+
+.profile-div .profile-img-3 {
+  position: absolute;
+  top: 60%;
+  left: 20%;
+}
 
 .profile .dots-1 {
   position: absolute;
@@ -11733,4 +11753,13 @@ html {
     width: 1.5vw;
     left: -2vw;
   }
+}
+
+.cv-tiny{
+  border-radius: 3vw;
+  margin-top: 5vw;
+  /* width: 75%; */
+  /* height: auto; */
+  width: 15vw; /* 70% of the viewport width */
+  height: 21.2vw; /* Set the height proportionally to maintain A4 aspect ratio */
 }
