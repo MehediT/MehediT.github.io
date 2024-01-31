@@ -11653,8 +11653,17 @@ html {
 .profile .dots-4 svg {
   fill: #1e30f3;
 }
-
+.cv-tiny{
+  border-radius: 1vw;
+  width: 42.4vw; /* Set the width proportionally for A4 aspect ratio */
+  height: 60vw; /* 40% of the viewport height */
+}
 @media (min-width: 576px) {
+  .cv-tiny{
+    border-radius: 1vw;
+    width: 42.4vw; /* Set the width proportionally for A4 aspect ratio */
+    height: 60vw; /* 40% of the viewport height */
+  }
   .profile {
     height: 60vw;
     width: 60vw;
@@ -11680,6 +11689,11 @@ html {
   }
 }
 @media (min-width: 768px) {
+  .cv-tiny{
+    border-radius: 0.3vw;
+    width: 35.6vw; /* 70% of the viewport width */
+    height: 50vw; /* Set the height proportionally to maintain A4 aspect ratio */
+  }
   .profile {
     height: 50vw;
     width: 50vw;
@@ -11705,6 +11719,11 @@ html {
   }
 }
 @media (min-width: 992px) {
+  .cv-tiny{
+    border-radius: 1vw;
+    width: 28.4vw; /* Set the width proportionally for A4 aspect ratio */
+    height: 40vw; /* 40% of the viewport height */
+  }
   .profile {
     height: 40vw;
     width: 40vw;
@@ -11730,6 +11749,11 @@ html {
   }
 }
 @media (min-width: 1200px) {
+  .cv-tiny{
+    border-radius: 0.3vw;
+    width: 15vw; /* 70% of the viewport width */
+    height: 21.2vw; /* Set the height proportionally to maintain A4 aspect ratio */
+  }
   .profile {
     height: 35vw;
     width: 35vw;
@@ -11753,13 +11777,4 @@ html {
     width: 1.5vw;
     left: -2vw;
   }
-}
-
-.cv-tiny{
-  border-radius: 3vw;
-  margin-top: 5vw;
-  /* width: 75%; */
-  /* height: auto; */
-  width: 15vw; /* 70% of the viewport width */
-  height: 21.2vw; /* Set the height proportionally to maintain A4 aspect ratio */
 }
