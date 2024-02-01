@@ -11681,6 +11681,11 @@ html {
 .cv-transition:hover{
   transform:scale(1.15);
 }
+
+#popup{
+  flex-direction: column;
+}
+
 @media (min-width: 576px) {
   .cv-taller{
     width: 26rem;
@@ -11746,6 +11751,9 @@ html {
   }
 }
 @media (min-width: 992px) {
+  #popup{
+    flex-direction: row;
+  }
   .cv-taller{
     width: 26rem;
   }
@@ -11833,4 +11841,18 @@ html {
   transform: translate(-50%, -50%);
   padding: 1%;
   align-items: center;
+}
+
+.btn-a-formation{
+  text-decoration:none;
+  color: var(--bs-code-color);  
+}
+
+.btn-a-formation-div:hover{
+  transform:scale(1.05);
+}
+.btn-a-formation-div:hover{
+  transition: transform .2s;
+  border-radius: 0.3vw;
+  cursor: zoom-in;
 }
